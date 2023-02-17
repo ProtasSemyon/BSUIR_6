@@ -1,0 +1,26 @@
+# ninja log v5
+21	4614	1676054423997754651	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	a01a67d8dd5cbb51
+90	123	1676054434987781091	lib/libgmock_main.a	fd667ec073d1320c
+90	279	1676054435157781500	tests/LOIS_2_tests	bfb6db64f1f5977c
+90	279	1676054435157781500	/home/smn/BSUIR/6/LOIS/2/build/tests/LOIS_2_tests[1]_tests.cmake	bfb6db64f1f5977c
+54	90	1676054434954447677	lib/libgtest_main.a	b5be33271976f8c
+14	54	1676054434917780922	lib/libgtest.a	505324fa9dc7955c
+21	2790	1676054422184416957	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	149e37f61d9608af
+13	307	1676293286975911644	build.ninja	e3ffe15b934a0b08
+18	624	1676284571439395724	CMakeFiles/LOIS_2.dir/src/LogicFormula.cpp.o	57be9523a7c8e815
+760	809	1676286239337396076	libLOIS_2.a	1e3d74ebdf7983d7
+54	90	1676054434954447677	lib/libgmock.a	90bf57332786e86f
+3	11	0	/home/smn/BSUIR/6/LOIS/2/build/CMakeFiles/cmake.verify_globs	6f7188706501288a
+552	669	1676286297046136120	LOIS_2_run	867f7d82697643a5
+18	786	1676284571602726161	CMakeFiles/LOIS_2.dir/src/Parser.cpp.o	62b8b12c80f00909
+90	279	1676054435157781500	tests/LOIS_2_tests[1]_tests.cmake	bfb6db64f1f5977c
+13	36	1676055582344991736	tests/CMakeFiles/LOIS_2_tests.dir/src/d.cpp.o	47341f6c835ef73b
+13	552	1676286296929465438	CMakeFiles/LOIS_2_run.dir/main.cpp.o	2f28d3dfb1d80d24
+21	1573	1676054420977747389	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	67a35b1cf481da96
+26	760	1676286239297394576	CMakeFiles/LOIS_2.dir/src/Table.cpp.o	cd4d44332cea98b4
+21	2191	1676054421594415538	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	57b1568546d0e1ae
+22	1668	1676054421071080947	tests/CMakeFiles/LOIS_2_tests.dir/src/ValidatorTests.cpp.o	c472e873d8856cc8
+1	20	0	/home/smn/BSUIR/6/LOIS/2/build/CMakeFiles/cmake.verify_globs	6f7188706501288a
+21	948	1676293332855967449	CMakeFiles/LOIS_2_run.dir/main.cpp.o	2f28d3dfb1d80d24
+948	1182	1676293333092634154	LOIS_2_run	867f7d82697643a5
+4	22	0	/home/smn/BSUIR/6/LOIS/2/build/CMakeFiles/cmake.verify_globs	6f7188706501288a

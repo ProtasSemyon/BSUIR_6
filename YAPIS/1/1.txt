@@ -1,0 +1,112 @@
+base types - string (as VARCHAR(n) in SQL) and number
+
+type column {
+    name string
+    type string or number
+    data - tuple of type, can be empty
+}
+
+type row {
+    tuple with types
+}
+
+type table {
+    tuple of column
+    tuple of row (data)
+
+    setPrimaryKey(columnName or column)
+    setForeignKey(columnName or column, ref on otherTable, otherColumnName or otherColumn)
+
+    addColumn
+    addRow
+
+    changeRow(number, columnName or column, newValue)
+    etc...
+}
+
+table union(table1, table2) -> table1 + table2
+
+table intersect(table1, table2) -> table1 * table2
+
+table join(table childTable, table parentTable, column childKey, column parentKey)
+
+table select(table, columns)
+
+
+//-----------------------------------------------------------------------------------------------
+string(20) a = read()
+write(a)
+
+table createEmployeeTable()>>
+    tuple createColumns()>>
+        idColumn is ("Id", number)
+        nameColumn is ("Name", string(100))
+        << [idColumn, nameColumn, ("Surname", string(100))]
+    
+    employees is (createColumns())
+    employees.setPrimaryKey("Id")
+
+    << employees
+
+table createCabinetTable(number countOfCabinets)>>
+    cabinets is ([("Id", number), ("Number", number)])
+    cabinets.setPrimaryKey("Id")
+
+    for(number currentCabinet is 0; currentCabinet < countOfCabinets; currentCabinet++)>>
+        cabinets.addRow([currentCabinet, 100 + currentCabinet])
+
+    << cabinets
+
+
+firstCompanyEmployees is createEmployeeTable()
+secondCompanyEmployees is createEmployeeTable()
+
+if (firstCompanyEmployees equal secondCompanyEmployees)>>
+    write("Ok")
+else>>
+    write("Not Ok")
+
+cabinets is createCabinetTable(10)
+
+secondCompanyEmployees is firstCompanyEmployees
+
+col is ("CabinetId", number)
+
+firstCompanyEmployees.addColumn(("CabinetId", number))
+firstCompanyEmployees.setForeignKey("CabinetId", cabinets, "Id")
+
+firstCompanyEmployees.addRow([1, "Semen", "Protas", 5])
+firstCompanyEmployees.addRow([2, "Saymon", "Protos", 5])
+
+employeesInCabinet is join(firstCompanyEmployees, cabinets, "CabinetId", "Id")
+
+joinedCabinet is employeesInCabinet.getColumnByName("Number")
+
+write(select(employeesInCabinet, ["Surname", joinedCabinet]))
+
+secondCompanyEmployees.addColumn(("Salary", number))
+
+countOfRows is 0
+
+while (countOfRows less secondCompanyEmployees.getRows().size())>>
+    countOfRows++
+    secondCompanyEmployees.changeRow(countOfRows - 1, "Salary", countOfRows * 100)
+
+for (rowNum is 0; rowNum less countOfRows; rowNum++)>>
+    salary is secondCompanyEmployees.getRowColumnData(rowNum, "Salary")
+    switch (salary)>>
+        case 100>>
+            write("1'st salary ")
+            write(salary)
+        case 200>>
+            write("2'nd salary ")
+            write(salary)
+        case 300>>
+            write("3'th salary ")
+            write(salary)
+        default>>
+            write("No salary")
+            write(salary)
+
+
+

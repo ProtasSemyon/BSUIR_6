@@ -1,0 +1,7 @@
+ASSIGN=1
+ID=2
+NUMBER=3
+WS=4
+EOL=5
+'is'=1
+'\n'=5

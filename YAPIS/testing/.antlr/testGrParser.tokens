@@ -1,0 +1,7 @@
+INDENT=1
+DEDENT=2
+NEWLINE=3
+WS=4
+BlockComment=5
+LineComment=6
+LEGIT=7

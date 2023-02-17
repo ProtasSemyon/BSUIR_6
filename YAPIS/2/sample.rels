@@ -1,0 +1,10 @@
+const table t is [(abc, ["cde"]), [bca]]
+table t(number c)>> 
+    abc is clown
+    clown is clown
+    << clown
+
+column a is func([sdfsdf],[sdfsdfsdf, "sdfsdfdf"])
+string(500) a is "abcde"
+
+a is 11 + 12
