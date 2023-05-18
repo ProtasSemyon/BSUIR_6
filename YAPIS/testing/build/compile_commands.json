@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/src/Column.c.o -c /home/smn/BSUIR_6/YAPIS/testing/src/Column.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/src/Column.c",
+  "output": "CMakeFiles/Tables.dir/src/Column.c.o"
+},
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/src/Constants.c.o -c /home/smn/BSUIR_6/YAPIS/testing/src/Constants.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/src/Constants.c",
+  "output": "CMakeFiles/Tables.dir/src/Constants.c.o"
+},
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/src/Row.c.o -c /home/smn/BSUIR_6/YAPIS/testing/src/Row.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/src/Row.c",
+  "output": "CMakeFiles/Tables.dir/src/Row.c.o"
+},
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/src/Table.c.o -c /home/smn/BSUIR_6/YAPIS/testing/src/Table.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/src/Table.c",
+  "output": "CMakeFiles/Tables.dir/src/Table.c.o"
+},
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/src/lib.c.o -c /home/smn/BSUIR_6/YAPIS/testing/src/lib.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/src/lib.c",
+  "output": "CMakeFiles/Tables.dir/src/lib.c.o"
+},
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/src/utils.c.o -c /home/smn/BSUIR_6/YAPIS/testing/src/utils.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/src/utils.c",
+  "output": "CMakeFiles/Tables.dir/src/utils.c.o"
+},
+{
+  "directory": "/home/smn/BSUIR_6/YAPIS/testing/build",
+  "command": "/usr/bin/clang -g -o CMakeFiles/Tables.dir/main.c.o -c /home/smn/BSUIR_6/YAPIS/testing/main.c",
+  "file": "/home/smn/BSUIR_6/YAPIS/testing/main.c",
+  "output": "CMakeFiles/Tables.dir/main.c.o"
+}
+]

@@ -72,6 +72,7 @@ Semi : ';' ;
 Quot : '"';
 Return : '<<';
 BlockStart : '>>';
+Point : '.';
 
 //brackets
 LParen : '(' ;
@@ -87,18 +88,30 @@ TableType : 'table';
 ColumnTupe : 'column';
 RowType : 'row';
 NumberType : 'number';
+TupleType : 'tuple';
 StringWord : 'string';
 
 //math operands
 Plus : '+';
 Minus : '-';
+Divide : '/';
+Multiplication : '*';
+
+//comparison operands
 Less : 'less';
 Equal : 'equal';
 More : 'more';
 LessEqual : 'lessEqual';
 MoreEqual : 'moreEqual';
-Divide : '/';
-Multiplication : '*';
+
+While : 'while';
+For : 'for';
+Switch : 'switch';
+Case : 'case';
+Default : 'default';
+If : 'if';
+Else : 'else';
+Break : 'break';
 
 ID : [a-zA-Z_][a-zA-Z0-9_]*;
 IntNumber : [1-9][0-9]+ | [0-9];

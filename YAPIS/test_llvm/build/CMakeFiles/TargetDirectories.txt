@@ -1,0 +1,6 @@
+/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/GigachadCompiler.dir
+/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/intrinsics_gen.dir
+/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/omp_gen.dir
+/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/acc_gen.dir
+/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/edit_cache.dir
+/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/rebuild_cache.dir

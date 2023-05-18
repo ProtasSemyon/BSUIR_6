@@ -8,7 +8,7 @@ enum Types {
     Conjunction,
     Disjunction,
     Implication,
-    Equivalent,
+    Equivalention,
     Negation,
     Atomic,
     Constant
@@ -80,11 +80,11 @@ private:
     }
 };
 
-class EquivalentF : public BinaryFormula {
+class EquivalentionF : public BinaryFormula {
 public:
-    EquivalentF(const LogicFormulaPtr &left, const LogicFormulaPtr &right) : BinaryFormula(left, right) {}
+    EquivalentionF(const LogicFormulaPtr &left, const LogicFormulaPtr &right) : BinaryFormula(left, right) {}
     Types getType() const override {
-        return Types::Equivalent;
+        return Types::Equivalention;
     }
 private:
     std::string getSign() const override{

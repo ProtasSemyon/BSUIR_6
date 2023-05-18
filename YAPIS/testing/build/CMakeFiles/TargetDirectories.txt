@@ -1,0 +1,3 @@
+/home/smn/BSUIR_6/YAPIS/testing/build/CMakeFiles/Tables.dir
+/home/smn/BSUIR_6/YAPIS/testing/build/CMakeFiles/edit_cache.dir
+/home/smn/BSUIR_6/YAPIS/testing/build/CMakeFiles/rebuild_cache.dir

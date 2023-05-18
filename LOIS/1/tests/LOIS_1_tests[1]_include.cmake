@@ -1,0 +1,5 @@
+if(EXISTS "/home/smn/BSUIR_6/LOIS/1/tests/LOIS_1_tests[1]_tests.cmake")
+  include("/home/smn/BSUIR_6/LOIS/1/tests/LOIS_1_tests[1]_tests.cmake")
+else()
+  add_test(LOIS_1_tests_NOT_BUILT LOIS_1_tests_NOT_BUILT)
+endif()

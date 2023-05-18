@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <iostream>
 
-bool Validator::isFormulaPDNF(const LogicFormulaPtr &formula) {
+bool Validator::isPDNF(const LogicFormulaPtr &formula) {
     if (formula->getType() == Types::Atomic) {
         return true;
     }
@@ -68,6 +68,10 @@ std::vector<LogicFormulaPtr> Validator::getConjunctions(const LogicFormulaPtr &f
         return result;
     }
 
+    if (formula->getType() == Types::Negation || formula->getType() == Types::Atomic) {
+        return {formula};
+    }
+
     throw std::invalid_argument("It's not a PDNF formula");
 }
 
@@ -110,7 +114,7 @@ Validator::AtomicVector Validator::getAtomic(const LogicFormulaPtr &formula) {
     throw std::invalid_argument("It's not a PDNF formula");
 }
 
-bool Validator::isEquialentAtomics(const AtomicVector &lhs, const AtomicVector &rhs) {
+bool Validator::isEquivalentAtomics(const AtomicVector &lhs, const AtomicVector &rhs) {
     for (const auto &l : lhs) {
         bool isExist = false;;
         for (const auto &r : rhs) {
@@ -127,7 +131,7 @@ bool Validator::isEquialentAtomics(const AtomicVector &lhs, const AtomicVector &
 }
 
 bool Validator::compareAtomics(const AtomicVector &lhs, const AtomicVector &rhs) {
-    if (!isEquialentAtomics(lhs, rhs)) {
+    if (!isEquivalentAtomics(lhs, rhs)) {
         throw std::invalid_argument("It's not a PDNF formula");
     }
     for (const auto &l : lhs) {

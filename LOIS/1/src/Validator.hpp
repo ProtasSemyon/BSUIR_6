@@ -4,7 +4,7 @@
 
 class Validator {
 public:
-    static bool isFormulaPDNF(const LogicFormulaPtr &formula);
+    static bool isPDNF(const LogicFormulaPtr &formula);
 private:
     struct ConjunctionElement {
         LogicFormulaPtr atomic;
@@ -17,7 +17,7 @@ private:
     static AtomicVector getAtomic(const LogicFormulaPtr &formula);
     static bool checkRepeat(const AtomicVector &vect);
 
-    static bool isEquialentAtomics(const AtomicVector &lhs, const AtomicVector &rhs);
+    static bool isEquivalentAtomics(const AtomicVector &lhs, const AtomicVector &rhs);
     static bool compareAtomics(const AtomicVector &lhs, const AtomicVector &rhs);
 
 

@@ -1,36 +1,45 @@
 parser grammar RelScriptParser;
-options { tokenVocab=RelScriptLexer; }
+options { tokenVocab=RelScriptLexer; language=Cpp; }
 
 program : ( NEWLINE | statement )* EOF ;
 
-statement 
-  : (assignExpression | functionDeclaration | functionUsage) NEWLINE?;
+statement
+  : (assignExpression 
+  | functionDeclaration 
+  | functionUsage 
+  | methodUsage
+  | whileStatement 
+  | forStatement 
+  | switchStatement 
+  | ifStatement) 
+  NEWLINE?
+  ;
+
+methodUsage
+  :(ID | functionUsage)(Point functionUsage)+;
 
 assignExpression 
   : Const? type? ID Assign expression;
 
 number : IntNumber | FloatNumber;
 
-
-expression 
-  : inBracesExpression
-  | functionUsage
-  | arithmeticExpression
-  | ID 
+atom 
+  : ID 
   | number 
   | StringLiteral
-  ;
-
-arithmeticExpression
-  : expressionLeft binarySign expression;
-
-expressionLeft
-  : inBracesExpression
   | functionUsage
-  | ID
-  | number
-  | StringLiteral
+  | methodUsage
+  | inBracesExpression
   ;
+
+expression
+  : mulExpression (Plus mulExpression | Minus mulExpression)* | logicExpression | type;
+
+mulExpression
+  : atom (Multiplication atom | Divide atom)*;
+
+logicExpression
+  : atom (Equal atom | More atom | Less atom | MoreEqual atom | LessEqual atom)?;
 
 binarySign
   : Plus
@@ -41,8 +50,6 @@ binarySign
   | Less
   | More
   | Equal;
-
-
 
 inBracesExpression 
   : inCurlyExpression 
@@ -66,29 +73,49 @@ functionDeclaration
   : type ID functionDeclarationBraces BlockStart NEWLINE block;
 
 block
-  : INDENT statement+ returnExpression? DEDENT;
+  : INDENT statement* returnExpression? DEDENT;
 
 returnExpression
   : Return expression? NEWLINE;
 
 functionDeclarationBraces
-  : LParen functionDeclarationArgs RParen;
+  : LParen functionDeclarationArgs? RParen;
 
 functionDeclarationArgs
   : type ID | type ID Comma functionDeclarationArgs;
 
 functionUsage
-  : ID inParenExpression;
+  : ID (LParen RParen | inParenExpression);
 
 type 
   : TableType 
   | ColumnTupe 
   | RowType 
   | stringType
-  | NumberType;
+  | NumberType
+  | TupleType;
 
 stringType
   : StringWord LParen IntNumber RParen;
+
+whileStatement
+  : While LParen logicExpression RParen BlockStart NEWLINE block;
+
+forStatement
+  : For LParen assignExpression? Semi logicExpression? Semi assignExpression? RParen BlockStart NEWLINE block;
+
+switchStatement
+  : Switch LParen ID RParen BlockStart NEWLINE INDENT caseStatement* defaultStatement DEDENT;
+
+caseStatement
+  : Case (StringLiteral | number) BlockStart NEWLINE block ;
+
+defaultStatement
+  : Default BlockStart NEWLINE block;
+
+ifStatement
+  : If LParen logicExpression RParen BlockStart NEWLINE block (Else BlockStart NEWLINE block)?;
+
 
 
 

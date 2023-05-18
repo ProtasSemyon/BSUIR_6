@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLOIS_1.a CMakeFiles/LOIS_1.dir/src/LogicFormula.cpp.o CMakeFiles/LOIS_1.dir/src/Parser.cpp.o CMakeFiles/LOIS_1.dir/src/Validator.cpp.o
+/usr/bin/ranlib libLOIS_1.a

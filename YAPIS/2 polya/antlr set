@@ -1,0 +1,143 @@
+grammar ExprParser;
+options { language = Cpp;}
+
+program
+    : statement* EOF
+    ;
+
+
+statement: init_statement SEMI
+    | operation SEMI
+    | loop_statement
+    | overwrite_statement
+    | rule_mode SEMI
+    | set_func SEMI
+    | func
+    | default_func SEMI
+    | call_statement SEMI
+    | block_statement
+    | string
+    | line_comment
+    ;
+
+init_statement: TYPE ID EQ expr
+    | TYPE ID (COMMA ID)* 
+    | ID EQ (func|set_func|default_func)
+    ;
+
+call_statement: TYPE? ID EQ ID '(' ID? (',' ID)* ')'; 
+
+
+operation:  (INT|ID) OP (INT|ID|operation) 
+    | ID EQ (ID|INT) OP (ID|INT|operation) 
+    | ID (COMMA ID)* EQ expr (COMMA expr)* 
+    | LPAREN operation RPAREN 
+    | operation OP operation
+    | ID
+    | INT
+    ;
+
+expr: ID
+    | INT
+    | '!' expr
+    | expr 'and' expr
+    | expr 'or' expr
+    | operation
+    | structset
+    ;
+    
+structset:
+    '{' (element)? (',' element)* '}';
+
+element: INT 
+        | structset
+        | ID
+        ;
+
+loop_statement:for_statement
+    |while_statement
+    |if_statement
+    |else_statement
+    |switch_statement;
+
+for_statement : 'for' 'each' '('element 'in' ID ')' '{' statement* '}';
+
+while_statement: 'while' '(' '!'? ((INT|ID) comparison_operator (ID|INT) | set_contains) ')' '{' statement* '}';
+
+if_statement: 'if' '(' '!'? ((INT|ID) comparison_operator (ID|INT) | set_contains) ')' '{' statement* '}' else_statement?;
+
+else_statement: 'else' '{' statement* '}';
+
+switch_statement: 'switch' '(' ID ')' '{' case_block* default_block? '}' ;
+
+case_block : 'case' INT ':' statement* 'break' SEMI;
+
+default_block : 'default' ':' statement*;
+
+overwrite_statement: TYPE 'operator' OP '(' TYPE ID ',' TYPE ID')' '{' statement*  return_statement'}';
+
+func : TYPE ID '(' TYPE? ID? (',' TYPE ID)* ')' '{' statement* return_statement?'}' ;
+
+return_statement: 'return' expr SEMI;
+
+rule_mode: constanta_mode
+         | global_mode;
+
+constanta_mode: 'const' TYPE ID EQ expr ;
+global_mode: 'global'  ID  ;
+
+
+set_func: set_union
+        | set_intersection
+        | set_difference
+        | set_symmetric_difference
+        | set_issubset
+        | set_issuperset
+        | set_contains
+        | set_add
+;
+
+set_union: ID '.' 'union' '(' ID (',' ID)*')';
+set_intersection: ID '.' 'intersection' '(' ID (',' ID)*')' ;
+set_difference: ID '.' 'difference' '(' ID (',' ID)*')' ;
+set_symmetric_difference: ID '.' 'symmetric_difference' '(' ID ')' ;
+set_issubset: ID '.' 'issubset' '(' ID ')' ;
+set_issuperset: ID '.' 'issuperset' '(' ID ')' ;
+set_contains: ID '.' 'contains' '(' element ')' ;
+set_add: ID '.' 'add' '(' element ')' ;
+
+default_func: print_func
+            | input_func
+            | min_func
+            | len_func
+            | max_func;
+
+print_func: 'print' '(' ((structset|element) | string) ')';
+input_func: 'input' '(' ID? ')';
+min_func: 'min' '(' ID ')';
+max_func: 'max' '(' ID ')';
+len_func: 'len' '(' ID  ')';
+
+block_statement: '{' statement* '}';
+
+line_comment: '//' (ID|INT)*;
+
+string: ('"' (ID|INT)* '"');
+
+AND : 'and' ;
+OR : 'or' ;
+NOT : 'not' ;
+EQ : '=' ;
+COMMA : ',' ;
+SEMI : ';' ;
+LPAREN : '(' ;
+RPAREN : ')' ;
+LCURLY : '{' ;
+RCURLY : '}' ;
+TYPE : 'int' | 'float' | 'set' | 'element'| 'void' | 'str';
+OP: '+' | '-' | '/' | '*' ;
+comparison_operator : '<' | '<=' | '>' | '>=' | '==' | '!=';
+
+INT : [0-9]+ ;
+ID: [a-zA-Z_][a-zA-Z_0-9]* ;
+WS: [\n\r\f\t ] -> skip ;

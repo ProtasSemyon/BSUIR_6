@@ -40,6 +40,18 @@ public class RelScriptParserBaseListener implements RelScriptParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMethodUsage(RelScriptParser.MethodUsageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMethodUsage(RelScriptParser.MethodUsageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAssignExpression(RelScriptParser.AssignExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -64,6 +76,18 @@ public class RelScriptParserBaseListener implements RelScriptParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAtom(RelScriptParser.AtomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAtom(RelScriptParser.AtomContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpression(RelScriptParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -76,25 +100,25 @@ public class RelScriptParserBaseListener implements RelScriptParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArithmeticExpression(RelScriptParser.ArithmeticExpressionContext ctx) { }
+	@Override public void enterMulExpression(RelScriptParser.MulExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArithmeticExpression(RelScriptParser.ArithmeticExpressionContext ctx) { }
+	@Override public void exitMulExpression(RelScriptParser.MulExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpressionLeft(RelScriptParser.ExpressionLeftContext ctx) { }
+	@Override public void enterLogicExpression(RelScriptParser.LogicExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpressionLeft(RelScriptParser.ExpressionLeftContext ctx) { }
+	@Override public void exitLogicExpression(RelScriptParser.LogicExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -263,6 +287,78 @@ public class RelScriptParserBaseListener implements RelScriptParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStringType(RelScriptParser.StringTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhileStatement(RelScriptParser.WhileStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhileStatement(RelScriptParser.WhileStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterForStatement(RelScriptParser.ForStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitForStatement(RelScriptParser.ForStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSwitchStatement(RelScriptParser.SwitchStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSwitchStatement(RelScriptParser.SwitchStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCaseStatement(RelScriptParser.CaseStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCaseStatement(RelScriptParser.CaseStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterDefaultStatement(RelScriptParser.DefaultStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDefaultStatement(RelScriptParser.DefaultStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfStatement(RelScriptParser.IfStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfStatement(RelScriptParser.IfStatementContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

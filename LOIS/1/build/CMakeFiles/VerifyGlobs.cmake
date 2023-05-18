@@ -3,35 +3,35 @@
 cmake_policy(SET CMP0009 NEW)
 
 # SOURCES at CMakeLists.txt:6 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/smn/BSUIR/6/LOIS/1/src/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/smn/BSUIR_6/LOIS/1/src/*.cpp")
 set(OLD_GLOB
-  "/home/smn/BSUIR/6/LOIS/1/src/LogicFormula.cpp"
-  "/home/smn/BSUIR/6/LOIS/1/src/Parser.cpp"
-  "/home/smn/BSUIR/6/LOIS/1/src/Validator.cpp"
+  "/home/smn/BSUIR_6/LOIS/1/src/LogicFormula.cpp"
+  "/home/smn/BSUIR_6/LOIS/1/src/Parser.cpp"
+  "/home/smn/BSUIR_6/LOIS/1/src/Validator.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/smn/BSUIR/6/LOIS/1/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/smn/BSUIR_6/LOIS/1/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # SOURCES at CMakeLists.txt:6 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/smn/BSUIR/6/LOIS/1/src/*.hpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/smn/BSUIR_6/LOIS/1/src/*.hpp")
 set(OLD_GLOB
-  "/home/smn/BSUIR/6/LOIS/1/src/LogicFormula.hpp"
-  "/home/smn/BSUIR/6/LOIS/1/src/Parser.hpp"
-  "/home/smn/BSUIR/6/LOIS/1/src/Validator.hpp"
+  "/home/smn/BSUIR_6/LOIS/1/src/LogicFormula.hpp"
+  "/home/smn/BSUIR_6/LOIS/1/src/Parser.hpp"
+  "/home/smn/BSUIR_6/LOIS/1/src/Validator.hpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/smn/BSUIR/6/LOIS/1/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/smn/BSUIR_6/LOIS/1/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # SOURCES at tests/CMakeLists.txt:1 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/smn/BSUIR/6/LOIS/1/tests/src/*.cpp")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/smn/BSUIR_6/LOIS/1/tests/src/*.cpp")
 set(OLD_GLOB
-  "/home/smn/BSUIR/6/LOIS/1/tests/src/ValidatorTests.cpp"
+  "/home/smn/BSUIR_6/LOIS/1/tests/src/ValidatorTests.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/smn/BSUIR/6/LOIS/1/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/smn/BSUIR_6/LOIS/1/build/CMakeFiles/cmake.verify_globs")
 endif()

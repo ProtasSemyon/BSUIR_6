@@ -70,82 +70,19 @@ LogicFormulaPtr Parser::parse(const std::string& str) {
 }
 
 LogicFormulaPtr Parser::parseBinary(const std::string& str) {
-    if (const auto formula = parseConjunction(str)) {
+    if (const auto formula = parseBinary<ConjunctionF>(str, CONJUNCTION)) {
         return formula;
     }
-    if (const auto formula = parseDisjunction(str)) {
+    if (const auto formula = parseBinary<DisjunctionF>(str, DISJUNCTION)) {
         return formula;
     }
-    if (const auto formula = parseImplication(str)) {
+    if (const auto formula = parseBinary<ImplicationF>(str, IMPLICATION)) {
         return formula;
     }
-    if (const auto formula = parseEquivalent(str)) {
+    if (const auto formula = parseBinary<EquivalentionF>(str, EQUIVALENT)) {
         return formula;
     }
     return nullptr;
-}
-
-LogicFormulaPtr Parser::parseConjunction(const std::string& str) {
-    size_t position = 0;
-    if (!skipBraces(str, position)){
-        position++;
-    }
-    if (str.find(CONJUNCTION, position) != position) {
-        return nullptr;
-    }
-
-    auto lhs = parse(str.substr(0, position));
-    auto rhs = parse(str.substr(position + CONJUNCTION.size(), str.size()));
-
-    return std::make_shared<ConjunctionF>(lhs, rhs);
-}
-
-LogicFormulaPtr Parser::parseDisjunction(const std::string& str) {
-    size_t position = 0;
-    if (!skipBraces(str, position)){
-        position++;
-    }
-    if (str.find(DISJUNCTION, position) != position) {
-        return nullptr;
-    }
-
-    auto lhs = parse(str.substr(0, position));
-    auto rhs = parse(str.substr(position + DISJUNCTION.size(), str.size()));
-
-    return std::make_shared<DisjunctionF>(lhs, rhs);
-
-}
-
-LogicFormulaPtr Parser::parseImplication(const std::string& str) {
-    size_t position = 0;
-    if (!skipBraces(str, position)){
-        position++;
-    }
-    if (str.find(IMPLICATION, position) != position) {
-        return nullptr;
-    }
-
-    auto lhs = parse(str.substr(0, position));
-    auto rhs = parse(str.substr(position + IMPLICATION.size(), str.size()));
-
-    return std::make_shared<ImplicationF>(lhs, rhs);
-
-}
-
-LogicFormulaPtr Parser::parseEquivalent(const std::string& str) {
-    size_t position = 0;
-    if (!skipBraces(str, position)){
-        position++;
-    }
-    if (str.find(EQUIVALENT, position) != position) {
-        return nullptr;
-    }
-
-    auto lhs = parse(str.substr(0, position));
-    auto rhs = parse(str.substr(position + EQUIVALENT.size(), str.size()));
-
-    return std::make_shared<EquivalentF>(lhs, rhs);
-
 }
 
 LogicFormulaPtr Parser::parseUnary(const std::string& str) {
@@ -157,7 +94,7 @@ LogicFormulaPtr Parser::parseNegation(const std::string& str) {
         return nullptr;
     }
 
-    auto rhs = parse(str.substr(1, str.size()));
+    auto rhs = parse(str.substr(1));
 
     return std::make_shared<NegationF>(rhs);
 }

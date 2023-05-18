@@ -4,6 +4,6 @@
 #include "../../src/Validator.hpp"
 
 TEST(ValidatorTests, PDNF_ValidationTest) {
-    EXPECT_TRUE(Validator::isFormulaPDNF(Parser::parse("((A/\\(B/\\C))\\/(((!A)/\\(B/\\C))\\/((A/\\((!B)/\\C))\\/((!A)/\\((!B)/\\(!C))))))")));
-    EXPECT_TRUE(Validator::isFormulaPDNF(Parser::parse("(((((P/\\Q)/\\R)\\/((P/\\(!Q))/\\R))\\/(((P/\\(!Q))/\\(!R))\\/(((!P)/\\Q)/\\(!R))))\\/(((!P)/\\(!Q))/\\(!R)))")));
+    EXPECT_TRUE(Validator::isPDNF(Parser::parse("((A/\\(B/\\C))\\/(((!A)/\\(B/\\C))\\/((A/\\((!B)/\\C))\\/((!A)/\\((!B)/\\(!C))))))")));
+    EXPECT_TRUE(Validator::isPDNF(Parser::parse("(((((P/\\Q)/\\R)\\/((P/\\(!Q))/\\R))\\/(((P/\\(!Q))/\\(!R))\\/(((!P)/\\Q)/\\(!R))))\\/(((!P)/\\(!Q))/\\(!R)))")));
 }

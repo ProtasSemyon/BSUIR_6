@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-src"
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-build"
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix"
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src"
-  "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-src"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-build"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src"
+  "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

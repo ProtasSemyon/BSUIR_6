@@ -27,6 +27,16 @@ public interface RelScriptParserListener extends ParseTreeListener {
 	 */
 	void exitStatement(RelScriptParser.StatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#methodUsage}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodUsage(RelScriptParser.MethodUsageContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#methodUsage}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodUsage(RelScriptParser.MethodUsageContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RelScriptParser#assignExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -47,6 +57,16 @@ public interface RelScriptParserListener extends ParseTreeListener {
 	 */
 	void exitNumber(RelScriptParser.NumberContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#atom}.
+	 * @param ctx the parse tree
+	 */
+	void enterAtom(RelScriptParser.AtomContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#atom}.
+	 * @param ctx the parse tree
+	 */
+	void exitAtom(RelScriptParser.AtomContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RelScriptParser#expression}.
 	 * @param ctx the parse tree
 	 */
@@ -57,25 +77,25 @@ public interface RelScriptParserListener extends ParseTreeListener {
 	 */
 	void exitExpression(RelScriptParser.ExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RelScriptParser#arithmeticExpression}.
+	 * Enter a parse tree produced by {@link RelScriptParser#mulExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterArithmeticExpression(RelScriptParser.ArithmeticExpressionContext ctx);
+	void enterMulExpression(RelScriptParser.MulExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RelScriptParser#arithmeticExpression}.
+	 * Exit a parse tree produced by {@link RelScriptParser#mulExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitArithmeticExpression(RelScriptParser.ArithmeticExpressionContext ctx);
+	void exitMulExpression(RelScriptParser.MulExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link RelScriptParser#expressionLeft}.
+	 * Enter a parse tree produced by {@link RelScriptParser#logicExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressionLeft(RelScriptParser.ExpressionLeftContext ctx);
+	void enterLogicExpression(RelScriptParser.LogicExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link RelScriptParser#expressionLeft}.
+	 * Exit a parse tree produced by {@link RelScriptParser#logicExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressionLeft(RelScriptParser.ExpressionLeftContext ctx);
+	void exitLogicExpression(RelScriptParser.LogicExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RelScriptParser#binarySign}.
 	 * @param ctx the parse tree
@@ -216,4 +236,64 @@ public interface RelScriptParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStringType(RelScriptParser.StringTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileStatement(RelScriptParser.WhileStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileStatement(RelScriptParser.WhileStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForStatement(RelScriptParser.ForStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForStatement(RelScriptParser.ForStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#switchStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchStatement(RelScriptParser.SwitchStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#switchStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchStatement(RelScriptParser.SwitchStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#caseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCaseStatement(RelScriptParser.CaseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#caseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCaseStatement(RelScriptParser.CaseStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#defaultStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterDefaultStatement(RelScriptParser.DefaultStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#defaultStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitDefaultStatement(RelScriptParser.DefaultStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RelScriptParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStatement(RelScriptParser.IfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RelScriptParser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStatement(RelScriptParser.IfStatementContext ctx);
 }

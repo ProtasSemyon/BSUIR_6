@@ -1,4 +1,4 @@
-# Install script for directory: /home/smn/BSUIR/6/LOIS/1/tests
+# Install script for directory: /home/smn/BSUIR_6/LOIS/1/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

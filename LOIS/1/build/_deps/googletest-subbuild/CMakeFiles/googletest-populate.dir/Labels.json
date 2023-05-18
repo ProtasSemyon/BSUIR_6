@@ -2,37 +2,37 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule"
 		},
 		{
-			"file" : "/home/smn/BSUIR/6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
+			"file" : "/home/smn/BSUIR_6/LOIS/1/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule"
 		}
 	],
 	"target" : 

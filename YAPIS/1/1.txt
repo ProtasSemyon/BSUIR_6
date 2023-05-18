@@ -34,7 +34,7 @@ table select(table, columns)
 
 
 //-----------------------------------------------------------------------------------------------
-string(20) a = read()
+string(20) a is read()
 write(a)
 
 table createEmployeeTable()>>
@@ -52,7 +52,7 @@ table createCabinetTable(number countOfCabinets)>>
     cabinets is ([("Id", number), ("Number", number)])
     cabinets.setPrimaryKey("Id")
 
-    for(number currentCabinet is 0; currentCabinet < countOfCabinets; currentCabinet++)>>
+    for(number currentCabinet is 0; currentCabinet less countOfCabinets; currentCabinet is currentCabinet + 1)>>
         cabinets.addRow([currentCabinet, 100 + currentCabinet])
 
     << cabinets
@@ -89,24 +89,25 @@ secondCompanyEmployees.addColumn(("Salary", number))
 countOfRows is 0
 
 while (countOfRows less secondCompanyEmployees.getRows().size())>>
-    countOfRows++
+    countOfRows is countOfRows + 1
     secondCompanyEmployees.changeRow(countOfRows - 1, "Salary", countOfRows * 100)
 
-for (rowNum is 0; rowNum less countOfRows; rowNum++)>>
+for (rowNum is 0; rowNum less countOfRows; rowNum is rowNum + 1)>>
     salary is secondCompanyEmployees.getRowColumnData(rowNum, "Salary")
     switch (salary)>>
         case 100>>
             write("1'st salary ")
             write(salary)
+            break
         case 200>>
             write("2'nd salary ")
             write(salary)
+            break
         case 300>>
             write("3'th salary ")
             write(salary)
+            break
         default>>
             write("No salary")
             write(salary)
-
-
-
+            break

@@ -1,0 +1,226 @@
+// Operations: +, - etc. for built-in types
+graph operator+(graph a, graph b) {
+  graph result;
+  result.value = a.value + b.value;
+  result.connections = a.connections + b.connections;
+  return result;
+}
+
+graph operator-(graph a, graph b) {
+  graph result;
+  result.value = a.value - b.value;
+  result.connections = a.connections - b.connections;
+  return result;
+}
+
+graph operator*(graph a, int num) {
+  graph result;
+  result.value = a.value * num;
+  return result;
+}
+
+graph operator/(graph a, int num) {
+  graph result;
+  result.value = a.value / num;
+  return result;
+}
+
+// Built-in functions of breadth-first search, depth-first search, shortest path
+func breadth_first_search(graph g, node start) {
+  queue q;
+  set visited;
+  q.push(start);
+  visited.add(start);
+  
+  while (!q.empty()) {
+    node current = q.front();
+    q.pop();
+    for (arc a : current.connections) {
+      if (!visited.contains(a.end)) {
+        q.push(a.end);
+        visited.add(a.end);
+      }
+    }
+  }
+}
+
+func depth_first_search(graph g, node start) {
+  list s;
+  set visited;
+  s.push(start);
+  visited.add(start);
+  
+  while (!s.empty()) {
+    node current = s.top();
+    s.pop();
+    for (arc a : current.connections) {
+      if (!visited.contains(a.end)) {
+        s.push(a.end);
+        visited.add(a.end);
+      }
+    }
+  }
+}
+////////////////////////////////////////////////////////////////////////////////
+
+graph shortest_path(graph g, node start, node end) {
+  // Dijkstra's algorithm
+  map distance;
+  map previous;
+  set unvisited;
+  
+  for (node n : g.nodes) {
+    distance[n] = INT_MAX;
+    previous[n] = null;
+    unvisited.add(n);
+  }
+  
+  distance[start] = 0;
+  
+  while (!unvisited.empty()) {
+    node current = null;
+    int min_distance = INT_MAX;
+    for (node n : unvisited) {
+      if (distance[n] < min_distance) {
+        current = n;
+        min_distance = distance[n];
+      }
+    }
+    
+    unvisited.remove(current);
+    
+    for (arc a : current.connections) {
+      int new_distance = distance[current] + a.weight;
+      if (new_distance < distance[a.end]) {
+        distance[a.end] = new_distance;
+        previous[a.end] = current;
+      }
+    }
+  }
+  
+  // Reconstruct path
+  graph path;
+  node current= end;
+  while (current != start) {
+	node prev = previous[current];
+	for (arc a : prev.connections) {
+		if (a.end == current) {
+			path.push_front(a);
+			break;
+		}
+	}
+  current = prev;
+  }
+return path;
+}
+////////////////////////////////////////////////////////////
+
+// Explicit declaration of variables
+node start_node;
+graph my_graph;
+
+// Implicit type conversion
+// Single purpose assignment operator
+start_node = my_graph + start_node;
+
+// Subroutines limit scope
+func print_nodes(graph g) {
+	for (node n : g.nodes) {
+		write(n.value);
+	}
+}
+
+// Explicit block statement markers
+if (x > 5) {
+	x = x + 1;
+} 
+else {
+	x = x - 1;
+}
+
+// multi-way conditional statements (switch)
+switch (x):
+	case 10 {
+		write("x is 10");
+		break;
+  }
+	case 9 {
+		write();
+		break;
+  }
+	default {
+		write();
+  }
+
+// Passing parameters to a subroutine by reference
+func add_node(node &n, int value) {
+	func get_value(node &n) {
+		return n.value;
+	}
+	func set_value(node &n, int value) {
+		n.value = value
+	}
+	set_value(&n, get_value(&n) + value);
+}
+
+
+
+
+// At least 10 built-in functions
+int abs(int x) {
+if (x < 0) {
+return -x;
+}
+return x;
+}
+
+int max(int a, int b) {
+if (a > b) {
+return a;
+}
+return b;
+}
+
+int min(int a, int b) {
+if (a < b) {
+return a;
+}
+return b;
+}
+
+// Built-in I/O functions for working with built-in types read() write()
+node read_node() {
+// implementation
+}
+
+void write_node(node n) {
+// implementation
+}
+
+
+
+
+
+// Used for complex expressions (compound and with brackets)
+graph result = (start_node + my_graph) - node1;
+
+
+// Passing and Returning Parameters
+func increment(int &x) {
+	x = x + 1;
+}	
+int a = 5;
+increment(a);
+write(a); // Outputs 6
+
+
+// Set local and global scope for variables
+int global_variable = 5;
+
+func update_variable() {
+	int local_variable = 10;
+	global_variable = global_variable + local_variable;
+}
+
+update_variable();
+write(global_variable); // Outputs 15

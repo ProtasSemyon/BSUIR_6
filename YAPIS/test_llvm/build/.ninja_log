@@ -1,0 +1,4 @@
+# ninja log v5
+1	13	0	/home/smn/BSUIR_6/YAPIS/test_llvm/build/CMakeFiles/cmake.verify_globs	9fd1ec01fc329383
+15	2347	1682697799818464291	CMakeFiles/GigachadCompiler.dir/main.cpp.o	dcf662cae222d51a
+2348	2933	1682697800408471317	GigachadCompiler	2dd5cb6ef02042f8

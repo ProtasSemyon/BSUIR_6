@@ -1,0 +1,14 @@
+# Target labels
+ googletest-populate
+# Source files and their labels
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/CMakeFiles/googletest-populate
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/CMakeFiles/googletest-populate.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test.rule
+/home/smn/BSUIR_6/LOIS/1/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update.rule
